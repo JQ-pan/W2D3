@@ -14,16 +14,10 @@ class Board
     end
 
     def place_mark(position, mark)
+        unless valid?(position) && empty?(position)
+            raise Runtime.new "invalid mark"
+        end
         @grid[position[0]][position[1]] = mark
-
-
-
-
-    # def display
-    #     puts @grid
-    # end
+    end
 
 end
-
-# this = Board.new
-# this.display
